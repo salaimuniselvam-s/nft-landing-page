@@ -1,25 +1,25 @@
-import React, { useState } from 'react';
-import { BiUserCircle } from 'react-icons/bi';
-import { GiHamburgerMenu } from 'react-icons/gi';
-import { AiTwotoneFolder } from 'react-icons/ai';
-import logo from '../assets/logo.png';
+import React, { useState } from "react";
+// import { BiUserCircle } from "react-icons/bi";
+import { GiHamburgerMenu } from "react-icons/gi";
+// import { AiTwotoneFolder } from "react-icons/ai";
+import logo from "../assets/logo.png";
 
 const pages = [
   {
-    title: 'Art',
-    path: '/art',
+    title: "Art",
+    path: "/art",
   },
   {
-    title: 'Collectible',
-    path: '/collectible',
+    title: "Collectible",
+    path: "/collectible",
   },
   {
-    title: 'Gaming',
-    path: '/gaming',
+    title: "Gaming",
+    path: "/gaming",
   },
   {
-    title: 'Explore',
-    path: '/explore',
+    title: "Explore",
+    path: "/explore",
   },
 ];
 
@@ -49,8 +49,8 @@ const Header = () => {
           >
             Create
           </button>
-          <BiUserCircle size={32} className=" text-blue-600" />
-          <AiTwotoneFolder size={32} className=" text-blue-600" />
+          {/* <BiUserCircle size={32} className=" text-blue-600" />
+          <AiTwotoneFolder size={32} className=" text-blue-600" /> */}
           <button
             onClick={() => setIsNavActive(!isNavActive)}
             type="button"

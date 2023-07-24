@@ -1,10 +1,15 @@
-import liveauctions from '../assets/liveauctions.png';
-import { AiFillHeart } from 'react-icons/ai';
-import { Title, Wrapper } from './HotCollections';
-import moment from 'moment';
-import { useEffect, useState } from 'react';
+import liveauctions from "../assets/liveauctions.png";
+import { AiFillHeart } from "react-icons/ai";
+import { Title, Wrapper } from "./HotCollections";
+import moment from "moment";
+import { useEffect, useState } from "react";
 
-export const liveAuctionsTitle = ['Women NFT', 'Women NFT', 'Women NFT', 'Women NFT'];
+export const liveAuctionsTitle = [
+  "Women NFT",
+  "Women NFT",
+  "Women NFT",
+  "Women NFT",
+];
 
 const StarRating = () => {
   return (
@@ -59,11 +64,11 @@ const StarRating = () => {
 };
 
 export const LiveAuctionsCard = ({ img, title, isRecent }) => {
-  const [time, setTime] = useState('11:24:00');
+  const [time, setTime] = useState("11:24:00");
 
   useEffect(() => {
     const setTimes = () => {
-      let times = moment().format('LTS');
+      let times = moment().format("LTS");
       setTime(times.substring(0, times.length - 2));
     };
     setInterval(() => {
@@ -71,15 +76,22 @@ export const LiveAuctionsCard = ({ img, title, isRecent }) => {
     }, 1000);
     return () => clearInterval(setTimes, 1000);
   }, []);
-  console.log(time.split(':'));
   return (
     <div className="max-w-350 cursor-pointer relative rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] ">
       <img className="rounded-t-lg" src={img} alt={title} />
       {!isRecent && (
         <div className="absolute top-3 right-5 z-40 text-white font-semibold">
-          <span className="bg-sky-700 rounded-sm p-1">{time.split(':')[0]}</span>:{' '}
-          <span className="bg-sky-700 rounded-sm  p-1">{time.split(':')[1]}</span> :{' '}
-          <span className="bg-sky-700 rounded-sm p-1">{time.split(':')[2]}</span>
+          <span className="bg-sky-700 rounded-sm p-1">
+            {time.split(":")[0]}
+          </span>
+          :{" "}
+          <span className="bg-sky-700 rounded-sm  p-1">
+            {time.split(":")[1]}
+          </span>{" "}
+          :{" "}
+          <span className="bg-sky-700 rounded-sm p-1">
+            {time.split(":")[2]}
+          </span>
         </div>
       )}
       <div className="pt-6 px-6">
@@ -96,8 +108,16 @@ export const LiveAuctionsCard = ({ img, title, isRecent }) => {
         <div className="flex w-full justify-between">
           <div className="flex justify-between items-center space-x-2">
             <div className="flex py-3 mb-5 -space-x-4">
-              <img className="w-8 h-8 border-2 border-white rounded-full" src={liveauctions} alt="" />
-              <img className="w-8 h-8 border-2 border-white rounded-full" src={liveauctions} alt="" />
+              <img
+                className="w-8 h-8 border-2 border-white rounded-full"
+                src={liveauctions}
+                alt=""
+              />
+              <img
+                className="w-8 h-8 border-2 border-white rounded-full"
+                src={liveauctions}
+                alt=""
+              />
             </div>
             <div>
               <div>@robert03</div>
@@ -105,7 +125,7 @@ export const LiveAuctionsCard = ({ img, title, isRecent }) => {
             </div>
           </div>
           <div className="text-gray-600 flex items-center gap-2">
-            {' '}
+            {" "}
             <AiFillHeart /> <span>246</span>
           </div>
         </div>
@@ -122,7 +142,7 @@ const LiveAuctions = () => {
         {liveAuctionsTitle.map((title, index) => (
           <LiveAuctionsCard img={liveauctions} title={title} key={index} />
         ))}
-      </div>{' '}
+      </div>{" "}
     </Wrapper>
   );
 };
