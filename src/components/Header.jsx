@@ -29,7 +29,7 @@ const Header = () => {
     <header className="fixed z-50 w-screen  bg-white max-w-1600 mx-auto py-3 px-4 md:py-6 md:px-16">
       {/* desktop & tablet */}
       <div className="flex w-full h-full items-center justify-between">
-        <img src={logo} className="w-36 object-cover" alt="logo" />
+        <img src={logo} className="sm:w-36 w-20 object-cover" alt="logo" />
         <div className="hidden lg:flex items-center gap-4">
           <ul className="flex  items-center gap-12 px-12">
             {pages.map((page) => (
@@ -45,7 +45,7 @@ const Header = () => {
           <SearchFc />
           <button
             type="submit"
-            className="text-white  bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 "
+            className="text-white  bg-blue-700 hover:bg-blue-800  focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 "
           >
             Create
           </button>
@@ -66,6 +66,7 @@ const Header = () => {
                 {pages.map((page) => (
                   <PagesFc
                     page={page}
+                    setIsNavActive={setIsNavActive}
                     key={page.title}
                     className="text-lg  px-3 py-1 hover:bg-slate-200 duration-100 transition-all ease-in-out cursor-pointer"
                   />
@@ -105,7 +106,7 @@ const SearchFc = () => {
         <input
           type="search"
           id="default-search"
-          className="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          className="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50  focus:border-blue-500 focus:outline-none"
           placeholder="Search Items.."
           required
         />
@@ -113,9 +114,13 @@ const SearchFc = () => {
     </>
   );
 };
-const PagesFc = ({ page, className }) => {
+const PagesFc = ({ page, className, setIsNavActive }) => {
   return (
-    <li className={className} key={page.title}>
+    <li
+      className={className}
+      key={page.title}
+      onClick={() => setIsNavActive && setIsNavActive(false)}
+    >
       {page.title}
     </li>
   );
