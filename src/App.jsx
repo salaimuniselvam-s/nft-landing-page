@@ -1,11 +1,10 @@
-import { CarouselFC } from './components/Carousel';
-import { Footer } from './components/Footer';
-import Header from './components/Header';
-import Home from './components/Home';
-import HotCollections from './components/HotCollections';
-import LiveAuctions from './components/LiveAuctions';
-import RecentylAdded from './components/RecentlyAdded';
-import TopCreators from './components/TopCreators';
+import { Footer } from "./components/Footer";
+import Header from "./components/Header";
+import Home from "./components/Home";
+import HotCollections from "./components/HotCollections";
+import LiveAuctions from "./components/LiveAuctions";
+import RecentylAdded from "./components/RecentlyAdded";
+import TopCreators from "./components/TopCreators";
 
 const App = () => {
   return (

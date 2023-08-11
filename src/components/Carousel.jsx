@@ -1,7 +1,7 @@
-import Carousel from 'react-multi-carousel';
-import 'react-multi-carousel/lib/styles.css';
-import hotcollectionthree from '../assets/hotcollectionthree.png';
-import { Collections, collectionTitle } from './HotCollections';
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
+import hotcollectionthree from "../assets/hotcollectionthree.png";
+import { Collections, collectionTitle } from "./HotCollections";
 const responsive = {
   superLargeDesktop: {
     // the naming can be any, depends on you.
@@ -29,7 +29,6 @@ export const CarouselFC = () => {
           <Collections img={hotcollectionthree} title={title} key={index} />
         ))}
       </Carousel>
-      ;
     </div>
   );
 };
